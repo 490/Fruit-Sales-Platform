@@ -17,6 +17,5 @@
 <body>
     <%@include file="menu.jsp"%>
 <br>
-    welcome .. ${user.name}
         </body>
 </html>

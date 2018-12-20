@@ -3,7 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
 
-<mapper namespace="UserMapper">
+<mapper namespace="mapper.UserMapper">
 <!-- resultMap映射 -->
 	<resultMap type="entity.User" id="userRM">
 		<!-- 主键 -->
@@ -22,7 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<!-- 查询 -->
-	<select id="find" parameterType="java.util.HashMap" resultMap="userRM">
+	<select id="find" parameterType="map" resultMap="userRM">
 		select * from user
 		where 1=1
 		<if test="username != null"> and username=#{username}</if>
@@ -68,9 +68,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{userId}
 		</foreach>
 	</delete>
-
-
-    <select id="findUserByName" parameterType="java.lang.String" resultType="test.entity.User">
-      SELECT * FROM USER WHERE NAME LIKE  #{name}
-    </select>
 </mapper>  

@@ -10,6 +10,6 @@ public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao
 {
     public UserDaoImpl()
     {
-        super.setNs("UserMapper");
+        super.setNs("mapper.UserMapper");
     }
 }

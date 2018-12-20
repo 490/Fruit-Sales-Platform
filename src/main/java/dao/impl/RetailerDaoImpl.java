@@ -12,7 +12,7 @@ public class RetailerDaoImpl extends BaseDaoImpl<Retailer> implements RetailerDa
 {
     public RetailerDaoImpl()
     {
-        super.setNs("RetailerMapper");
+        super.setNs("mapper.RetailerMapper");
     }
     public int count(Map map)
     {

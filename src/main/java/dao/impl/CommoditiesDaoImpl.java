@@ -11,7 +11,7 @@ public class CommoditiesDaoImpl extends BaseDaoImpl<Commodities> implements Comm
 {
     public CommoditiesDaoImpl()
     {
-        super.setNs("CommoditiesMapper");
+        super.setNs("mapper.CommoditiesMapper");
     }
     public int count(Map map)
     {

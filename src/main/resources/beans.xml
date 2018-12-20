@@ -43,7 +43,13 @@
         <property name="dataSource" ref="dataSource"/>
         <!-- 整合mybatis，包扫描mapper文件 -->
         <property name="configLocation" value="classpath:SqlMapConfig.xml"></property>
-        <property name="mapperLocations" value="classpath:UserMapper.xml"></property>
+        <property name="mapperLocations">
+            <list>
+                <value>classpath:UserMapper.xml</value>
+                <value>classpath:RetailerMapper.xml</value>
+                <value>classpath:CommoditiesMapper.xml</value>
+            </list>
+        </property>
     </bean>
 
 
