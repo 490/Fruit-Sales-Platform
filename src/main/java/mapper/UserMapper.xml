@@ -68,4 +68,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			#{userId}
 		</foreach>
 	</delete>
+
+
+    <select id="findUserByName" parameterType="java.lang.String" resultType="test.entity.User">
+      SELECT * FROM USER WHERE NAME LIKE  #{name}
+    </select>
 </mapper>  

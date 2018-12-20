@@ -18,8 +18,8 @@
     <context:property-placeholder location="classpath:db.properties"/>
 
     <!-- 2.包扫描:dao,service -->
-    <context:component-scan base-package="dao,service"/>
-    <!--context:component-scan base-package="test.*"/-->
+    <context:component-scan base-package="dao,service,controller"/>
+    <context:component-scan base-package="test.dao,test.service,test.controller"/>
 
     <!-- 3,dataSource数据源 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
@@ -43,7 +43,7 @@
         <property name="dataSource" ref="dataSource"/>
         <!-- 整合mybatis，包扫描mapper文件 -->
         <property name="configLocation" value="classpath:SqlMapConfig.xml"></property>
-        <property name="mapperLocations" value="classpath:*.xml"></property>
+        <property name="mapperLocations" value="classpath:*/mapper/*.xml"></property>
     </bean>
 
 

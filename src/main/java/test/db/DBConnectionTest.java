@@ -13,6 +13,21 @@ public class   DBConnectionTest {
     private SqlSessionFactory sqlSessionFactory;
     private SqlSession sqlSession = null;
 
+    @Test
+    public void testConnection() throws Exception
+    {
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(resource);
+        sqlSessionFactory = (SqlSessionFactory)context.getBean("sessionFactory");
+        sqlSession = sqlSessionFactory.openSession();
+        if(sqlSession != null)
+        {
+            System.out.println("mybatis连接成功，目前sql配置：");
+            System.out.println(sqlSession.getConfiguration().getMappedStatements().size());
+        }else
+        {
+            System.out.println("mybatis-DB 连接失败。");
+        }
+    }
     public SqlSession getSqlSession() throws Exception {
     	//获取Spring类加载配置对象
     	ClassPathXmlApplicationContext context =
