@@ -1,5 +1,6 @@
 package test.db;
 
+import entity.Retailer;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.junit.Test;
@@ -48,4 +49,5 @@ public class   DBConnectionTest {
     	System.out.println("姓名："+user.getName());
     	System.out.println("电话："+user.getTelphone());
     }
+
 }

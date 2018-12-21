@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
-@Repository
+//@Repository
 public abstract class BaseDaoImpl<T> extends SqlSessionDaoSupport implements BaseDao<T>
 {
     @Autowired

@@ -29,7 +29,7 @@ public class PageEntity
 
     public int getPageSize() {
         if(pageSize == null)
-            pageSize = 0;
+            pageSize = 10;
         return pageSize;
     }
 
