@@ -18,6 +18,7 @@ public class RetailerController extends BaseController
     @RequestMapping("/retailer/list.action")
     public String list(Model model, Retailer retailer,String startTime, String endTime)
     {
+       // System.out.println(".."+retailer.getAddress());
         Map<String,Object> map = this.retailerToMap(retailer);
         if(startTime!=null && !startTime.equals(""))
         {
