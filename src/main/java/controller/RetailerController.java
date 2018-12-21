@@ -29,12 +29,13 @@ public class RetailerController extends BaseController
         }
         List<Retailer> retailerList = retailerService.find(map);
         model.addAttribute("list",retailerList);
-        model.addAttribute("currentPage",retailer.getCurrentPage());
-        model.addAttribute("startPage",retailer.getStartPage());
+
+        model.addAttribute("currentPage",retailer.getCurrentPage());//当前页数
+        model.addAttribute("startPage",retailer.getStartPage());//当前请求位置
         int countNumber = retailerService.count(map);
         model.addAttribute("countNumber",countNumber);
         int pageSize = retailer.getPageSize();
-        model.addAttribute("pageSize",pageSize);
+        model.addAttribute("pageSize",pageSize);//每页数据，默认为10
         int sumPageNumber = countNumber%pageSize == 0 ? (countNumber/pageSize)
                                 : ((countNumber/pageSize) + 1);
         model.addAttribute("sumPageNumber",sumPageNumber);

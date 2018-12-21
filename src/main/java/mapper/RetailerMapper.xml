@@ -34,7 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</sql>  
 	
 	<!-- 查询 -->
-	<select id="find" parameterType="java.util.HashMap" resultMap="retailerRM">
+	<select id="find" parameterType="map" resultMap="retailerRM">
 		select * from retailer
 		where 1=1
         <include refid="query_retailer_where"></include><!-- sql片段引入 -->  

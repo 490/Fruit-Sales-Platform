@@ -178,10 +178,10 @@
             手机：<input type="text" name="telphone" style="width:120px"/>
             地址：<input type="text" name="address" style="width:120px"/><br/><br/>
             状态：<select id="indexStatus" onchange="changeStatus()">
-            <option value="-1" selected="selected">全部</option>
-            <option value="1">启用</option>
-            <option value="0">停用</option>
-         </select>
+                        <option value="-1" selected="selected">全部</option>
+                        <option value="1">启用</option>
+                        <option value="0">停用</option>
+                    </select>
 
 
          <input type="hidden" name="status" id="status" value="-1">
