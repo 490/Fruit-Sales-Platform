@@ -38,7 +38,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from retailer
 		where 1=1
         <include refid="query_retailer_where"></include><!--sql片段引入-->
-		<if test="startPage != null and pageSize != null">LIMIT #{startPage},#{pageSize}</if>bb
+		<if test="startPage != null and pageSize != null">LIMIT #{startPage},#{pageSize}</if>
 	</select>
 	
 	<!-- 统计数量 -->
