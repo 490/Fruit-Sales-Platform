@@ -1,9 +1,13 @@
 package controller;
 
+import com.alibaba.fastjson.JSONObject;
 import entity.Retailer;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import service.RetailerService;
 
 import javax.annotation.Resource;
@@ -45,6 +49,12 @@ public class RetailerController extends BaseController
 
     }
 
+    @RequestMapping("/retailer/editRetailer.action")
+    public @ResponseBody Retailer editRetailer(@RequestBody String json)
+    {
+        String id = JSONObject.parseObject(json).getString("id");
+        return retailerService.get(id);
+    }
     @RequestMapping("/retailer/edit.action")
     public String edit(Model model,Retailer retailer){
         retailerService.update(retailer);
