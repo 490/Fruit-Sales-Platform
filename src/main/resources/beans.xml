@@ -48,6 +48,7 @@
                 <value>classpath:UserMapper.xml</value>
                 <value>classpath:RetailerMapper.xml</value>
                 <value>classpath:CommoditiesMapper.xml</value>
+                <value>classpath:AccessoryMapper.xml</value>
             </list>
         </property>
     </bean>

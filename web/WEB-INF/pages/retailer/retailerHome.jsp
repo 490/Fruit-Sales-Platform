@@ -8,7 +8,7 @@
         *{margin:0; padding:0;} #menuContent a{text-decoration:none;color:#ffffff}
         .c{
             border-style: solid;width: 200px;height: 130px;
-            margin: 10px 10px 10px 10px;border-radius:10px;display:block;
+            margin: 10px 20px 0px 20px;border-radius:10px;display:block;
             background:#fff;
             margin:10% auto;
         }
