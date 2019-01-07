@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.alibaba.fastjson.JSONObject;
 import entity.Commodities;
 //import service.AccessoryService;
+import service.AccessoryService;
 import service.CommoditiesService;
 
 
@@ -29,7 +30,10 @@ public class CommoditiesController extends BaseController
 {
     @Resource
     CommoditiesService commoditiesService;
+    @Resource
+    AccessoryService accessoryService;
 
+    Log log = LogFactory.getLog(this.getClass());
 
     @RequestMapping("/commodities/list.action")
     public String list(Model model,Commodities commodities,
@@ -112,8 +116,8 @@ public class CommoditiesController extends BaseController
     public String delete(Model model,Commodities commodities){
         commoditiesService.deleteById(commodities.getFruitId());
         //删除货物下对应的所有附属品
-      ///  int result=accessoryService.deleteByFruitId(commodities.getFruitId());
-       /// log.info( "delete fruitId="+commodities.getFruitId()+"'s accessorys number:"+result);
+        int result=accessoryService.deleteByFruitId(commodities.getFruitId());
+        log.info( "delete fruitId="+commodities.getFruitId()+"'s accessorys number:"+result);
         //构建新的列表查询条件，只需要分页数据即可
         Commodities queryCommodities = new Commodities();
         queryCommodities.setStartPage(commodities.getStartPage());

@@ -4,6 +4,8 @@ import java.util.*;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +19,10 @@ public class AccessoryController extends BaseController
 	
 	@Resource
 	AccessoryService accessoryService;
-	
+
+	Log log = LogFactory.getLog(this.getClass());
+
+
 	//跳转至列表页面
 	@RequestMapping("/accessory/list.action")  
     public String list(Model model,Accessory accessory){ 
@@ -51,7 +56,8 @@ public class AccessoryController extends BaseController
 	
 	//删除一个
 	@RequestMapping("/accessory/delete.action")  
-    public String delete(Model model,Accessory accessory){   
+    public String delete(Model model,Accessory accessory)
+    {
 		accessoryService.deleteById(accessory.getAccessoryId());
 		//重新刷新列表
 		return list(model,accessory);
